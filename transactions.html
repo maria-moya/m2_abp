@@ -77,22 +77,22 @@
         </div>
     </header>
 
-    <main>
+    <main class="fondo-main">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+                    <div class="fondo-card">
+                        <h2 class="mb-4">Últimos Movimientos</h2>
 
-                    <h2 class="mb-4">Últimos Movimientos</h2>
+                        <select name="filtro" id="filtroTransferencia" class="mb-4 form-select">
+                            <option value="todos">Todos los movimientos</option>
+                            <option value="ingreso">Depósitos </option>
+                            <option value="envio">Tranferencias</option>
+                            <option value="compra">Compras</option>
+                        </select>
 
-                    <select name="filtro" id="filtroTransferencia" class="mb-4 form-select">
-                        <option value="todos">Todos los movimientos</option>
-                        <option value="ingreso">Depósitos </option>
-                        <option value="envio">Tranferencias</option>
-                        <option value="compra">Compras</option>
-                    </select>
-
-                    <ul id="listaTransacciones" class="list-group mb-3"></ul>
-
+                        <ul id="listaTransacciones" class="list-group mb-3"></ul>
+                    </div>
                 </div>
 
             </div>

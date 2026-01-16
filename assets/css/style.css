@@ -31,13 +31,13 @@
 }
 
 /* MAIN */
-.deposit-main{
+.fondo-main{
     margin-top: -50px;
     position: relative;
     z-index: 10;
 }
 
-.deposit-card{
+.fondo-card{
     background: #ffffff;
     border-radius: 15px;
     padding: 25px;
