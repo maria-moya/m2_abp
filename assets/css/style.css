@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#encabezado {
+    text-align: center;
+    text-shadow: 2px 2px 0px #111010, 5px 4px 0px rgba(0, 0, 0, 0.15), 0px 3px 19px rgba(100, 43, 27, 0.39);
+}
+
+
+#loginForm {
+    border-style: outset;
+    background: linear-gradient(140deg, #aea5b9, #ffffff);
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* HEADER */
+.wallet-header{
+    background: linear-gradient(135deg, #8f4ae8, #6a35d4);
+    color: white;
+    padding: 100px;
+    border-radius: 0 0 25px 25px;
+}
+.saldo{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* MAIN */
+.actions {
+    background: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: -40px;
+    box-shadow: 0 10px 20px rgba(10, 10, 10, 0.1);
+}
+
+.action-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.action-item:hover {
+    background-color: #f3f0ff;
+    transform: translateY(-3px);
+}
+
+.action-item:active {
+    transform: scale(0.95);
+}
+
+.btn-action{
+    background: none;
+    border: none;
+    color: inherit;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+#btnEnviar{
+    background:linear-gradient(1200deg, #8759c4, #825fc9);
+    color: white;
+    border-radius: 25px 25px 25px 25px;
+}
+
+#btnContacto{
+    background:linear-gradient(1200deg, #8759c4, #825fc9);
+    color: white;
+    border-radius: 25px 25px 25px 25px;
+}
+
+#btnBuscar{
+    background:linear-gradient(1200deg, #8759c4, #825fc9);
+    color: white;
+    border-radius: 25px 25px 25px 25px;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tranferencia</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!--LINK CON JS-->
+    <script defer src="./assets/js/sendmoney.js"></script>
+
+    <!--LINK CON CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100">
+            <div class="container-fluid">
+
+                <h1 class="navbar-brand">
+                    <i class="bi bi-arrow-left-right fs-5"> Transferencia</i>
+                </h1>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWallet">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarWallet">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">
+                                <i class="bi bi-house"></i> Menú principal
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sendmoney.html">
+                                <i class="bi bi-arrow-left-right"></i> Transferir
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="deposit.html">
+                                <i class="bi bi-arrow-down-circle"></i> Depositar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="transactions.html">
+                                <i class="bi bi-clock-history"></i> Ultimos movimientos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="wallet-header">
+
+            <div class=" mb-4 text-center">
+                <p class="text-white">Saldo actual:</p>
+                <div class="saldo">
+                    <p class="fw-bold">$<span id="saldoTotal">0</span></p>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="d-flex flex-column justify-content-center align-items-center">
+
+        <div class="container mb-5">
+            <div class="row actions text-center">
+
+                <div class="col-6 action-item">
+                    <button type="button" class="btn-action" id="btnAgregarContacto">
+                        <i class="bi bi-person"></i>
+                        <span>Agregar nuevo contacto</span>
+                    </button>
+                </div>
+                <div class="col-6 action-item">
+                    <button type="button" class="btn-action" id="btnEliminarContacto">
+                        <i class="bi bi-x-circle"></i>
+                        <span>Eliminar contacto</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+
+                    <section>
+                        <form id="formTransferencia">
+                            <div class="mb-3">
+                                <label for="buscar" class="form-label">Buscar contacto</label>
+                                <input type="text" name="form" id="buscar" class="form-control"
+                                    placeholder="Buscar contacto">
+                            </div>
+
+                            <div>
+                                <button type="button" class="btn btn-outline-primary mb-4"
+                                    id="btnBuscar">Buscar</button>
+                            </div>
+
+                            <h2 class="h3">Contactos</h2>
+
+                            <table class="table table-bordered mt-3">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Rut</th>
+                                        <th>Nombre</th>
+                                        <th>Banco</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaContactos"></tbody>
+                            </table>
+
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-outline-secondary mb-5" id="btnEnviar">Realizar
+                                    Tranferencia</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section>
+
+                        <form id="contactoNuevo">
+
+                            <h2 class="mb-4">Agregar contacto nuevo</h2>
+
+                            <div class="mb-3">
+                                <label for="rut" class="form-label">Rut:</label>
+                                <input type="number" name="rut" id="rut" class="form-control" placeholder="Ingrese rut"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre:</label>
+                                <input type="text" name="nom" id="nombre" class="form-control"
+                                    placeholder="Ingrese nombre" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="apellido" class="form-label">Apellido:</label>
+                                <input type="text" name="ap" id="apellido" class="form-control"
+                                    placeholder="Ingrese apellido" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="banco" class="form-label">Nombre del banco:</label>
+                                <input type="text" name="bco" id="banco" class="form-control"
+                                    placeholder="Ingrese banco" required>
+                            </div>
+
+                            <div class="d-grid gap-3 mb-4">
+                                <button type="submit" class="btn btn-outline-primary" id="btnContacto">Agregar nuevo
+                                    contacto</button>
+                            </div>
+
+                        </form>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
