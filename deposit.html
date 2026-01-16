@@ -84,32 +84,34 @@
 
     </header>
 
-    <main>
+    <main class="deposit-main">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+                    <div class="deposit-card">
+                        
+                        <h2 class="mb-4">Realizar depósito</h2>
 
-                    <h2 class="mb-4">Realizar depósito</h2>
+                        <form id="depositForm">
+                            <div class="mb-4">
+                                <label for="montoDepositado" class="form-label">Monto a depositar:</label>
+                                <input type="number" name="enviar" id="montoDepositado" class="form-control"
+                                    placeholder="Ingresa el monto" min="1" step="0.01" required>
+                            </div>
 
-                    <form id="depositForm">
-                        <div class="mb-4">
-                            <label for="montoDepositado" class="form-label">Monto a depositar:</label>
-                            <input type="number" name="enviar" id="montoDepositado" class="form-control"
-                                placeholder="Ingresa el monto" min="1" step="0.01" required>
+                            <div class="d-grid gap-2">
+                                <button id="btnDepositar" class="btn btn-outline-primary">Realizar deposito</button>
+                            </div>
+                        </form>
+
+                        <div id="confirmacionDeposito" class="mt-3 d-none">
+                            <div class="alert alert-success text-center mb-0">
+                                <strong>Depósito de $<span id="montoConfirmado"></span> realizado
+                                    correctamente.</strong>
+                            </div>
                         </div>
 
-                        <div class="d-grid gap-2">
-                            <button id="btnDepositar" class="btn btn-outline-primary">Realizar deposito</button>
-                        </div>
-                    </form>
-                    
-                    <div id="confirmacionDeposito" class="mt-3 d-none">
-                        <div class="alert alert-success text-center mb-0">
-                            <strong>Depósito de $<span id="montoConfirmado"></span> realizado
-                                correctamente.</strong>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
